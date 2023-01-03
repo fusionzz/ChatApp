@@ -8,7 +8,7 @@ module.exports = {
             return acc;
         }, {});
 
-        config.plugins.push(new webpack.DeginePlugin(env));
+        config.plugins.push(new webpack.DefinePlugin(env));
 
         return config;
     }

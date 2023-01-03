@@ -28,13 +28,13 @@ app.prepare().then(() => {
     server.use(bodyParser.json());
     server.use(bodyParser.urlencoded({ extended: true }));
 
-    server.get('*', (req, rest) => {
+    server.get('*', (req, res) => {
         return handler(req, res);
     });
 
     server.listen(port, err => {
         if (err) throw err;
-        console.log('> Ready on http://localhost:${port}');
+        console.log(`> Ready on http://localhost:${port}`);
     });
 
 })
